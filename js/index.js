@@ -56,7 +56,6 @@ var app = {
         alert(error);
     },
     onNotificationGCM: function(e) {
-        alert(e.event);
         switch( e.event )
         {
             case 'registered':
@@ -69,7 +68,7 @@ var app = {
                         main.appendChild(container);
                         alert('registration id = '+e.regid);
                     }catch(err) {
-                        alert('err');
+                        alert(err);
                     }
                 }
             break;
