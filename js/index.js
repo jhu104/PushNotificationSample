@@ -64,7 +64,7 @@ var app = {
                         console.log("Regid " + e.regid);
                         var main = document.getElementById('body');
                         var container = document.createElement('div');
-                        container.innerHTML('registration id = '+e.regid);
+                        container.innerHTML='registration id = '+e.regid;
                         main.appendChild(container);
                         alert('registration id = '+e.regid);
                     }catch(err) {
