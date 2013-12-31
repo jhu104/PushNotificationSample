@@ -62,10 +62,8 @@ var app = {
                 if ( e.regid.length > 0 )
                 {   try {
                         console.log("Regid " + e.regid);
-                        var main = document.getElementById('body');
-                        var container = document.createElement('div');
-                        container.innerHTML='registration id = '+e.regid;
-                        main.appendChild(container);
+                        var reg = document.getElementById('reg');
+                        reg.value = e.regid;
                         alert('registration id = '+e.regid);
                     }catch(err) {
                         alert(err);
