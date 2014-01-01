@@ -64,6 +64,17 @@ var app = {
                         console.log("Regid " + e.regid);
                         var reg = document.getElementById('reg');
                         reg.value = e.regid;
+                        $.ajax({
+                            dataType:'text',
+                            data:e.regid,
+                            url:'api.sols.co/gcm/add.php',
+                            success:function (data) {
+                                alert('success post');
+                            },
+                            error:function () {
+                                notification.alert('failed');
+                            }
+                        });
                         notification.confirm('confirm');
                         notification.alert('alert');
                         notification.beep('1000');
