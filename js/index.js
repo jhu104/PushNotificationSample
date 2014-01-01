@@ -38,13 +38,13 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        // var listeningElement = parentElement.querySelector('.listening');
-        // var receivedElement = parentElement.querySelector('.received');
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"529995838114","ecb":"app.onNotificationGCM"});
 
-        // listeningElement.setAttribute('style', 'display:none;');
-        // receivedElement.setAttribute('style', 'display:block;');
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
     },
@@ -64,7 +64,11 @@ var app = {
                         console.log("Regid " + e.regid);
                         var reg = document.getElementById('reg');
                         reg.value = e.regid;
-                        alert('registration id = '+e.regid);
+                        notification.confirm('confirm');
+                        notification.alert('alert');
+                        notification.beep('1000');
+                        notification.vibrate('1500');
+                        notification.prompt('prompt');
                     }catch(err) {
                         alert(err);
                     }
